@@ -149,10 +149,7 @@ def paste(text):
 def on_callback(data=None):
     def dec(func):
         async def wrap(e):
-            check = await join_checker(e)
-            if not check:
-                return
-
+ 
             if func.__name__ in DISABLED:
                 await e.answer("This function is currently disabled", alert=True)
                 return
